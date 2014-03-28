@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://kaelab.ranadesign.com/blog/demo/fitter/ -->
+<html lang="ja-JP"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="style.css">
+<script src="./fitter_files/jquery-1.8.3.min.js"></script>
+<script src="./fitter_files/fitter.js"></script>
+<script src="./fitter_files/fadechanger.js"></script>
+<script src="./fitter_files/imgloader.js"></script>
+<script src="./fitter_files/transition.js"></script>
+<script>
+$(function() {
+
+	// オプションの一括指定
+	var options = {
+		imglist: [
+			"./fitter_files/0.jpg",
+      "./fitter_files/1.jpg",
+      "../img/wirework/zebra.jpg"
+		],
+		width: 1200,
+		height: 896,
+		minWidth: 600,
+		minHeight: 400,
+		callback: function() {
+			var self = this;
+			
+			// ローディング表示を終了
+			$("#loading").hide();
+			// 末尾の要素をフェードイン
+			self.find("img").eq(-1).fadeIn(function() {
+				// フェード切り替え開始
+				self.fadechanger({ selector: "img" });
+			});
+
+			// fitter起動
+			self.fitter(options);
+		}
+	}
+	
+	// loader
+	$("#imgContainer").imgloader(options);
+
+	// transition
+	$("#header a").transition();
+
+});
+</script>
+</head>
+<body>
+<div id="wrapper">
+
+	<img src="./fitter_files/indicator.gif" id="loading" style="display: none;">
+
+	<div id="imgContainer"></div>
+	
+	<div id="header">
+		<img src="./fitter_files/contents.png">
+	</div>
+
+</div>
+
+</body></html>
