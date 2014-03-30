@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+ul.navi{
+  width: 220px;
+  margin: 0px;
+}
+
+ul.navi, ul.menu{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+div.category{
+  margin-top: 5px;
+  height: 40px;
+  line-height: 40px;
+  text-indent: 30px;
+  background: url("../img/category_plus.gif");
+  cursor: pointer;  
+}
+
+ul.menu a{
+  display: block;
+  height: 35px;
+  line-height: 35px;
+  color: #164158;
+  text-decoration: none;
+}
+
+div.open{
+  background: url("../img/category_minus.gif");
+  color: $ffffff;
+}
+
+ul.menu li{
+  background: url("../img/menu.gif");
+  text-indent: 35px;
+}
+
+ul.menu li.rollover{
+  background: url("../img/menu_over.gif");
+}
